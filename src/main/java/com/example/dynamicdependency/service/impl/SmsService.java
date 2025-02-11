@@ -9,8 +9,8 @@ public class SmsService implements MessageService {
     private final String providerName="SMS";
 
     @Override
-    public void sendMessage(String to, String from, String message) {
-        System.out.printf("Message sent from [%s] to [%s] with message [%s]\n" ,from, to, message);
+    public String sendMessage(String to, String from, String message) {
+        return String.format("Message sent from [%s] to [%s] with message [%s] using [%s]\n" ,from, to, message, getProviderName());
     }
 
     @Override

@@ -24,9 +24,9 @@ public class MessageController {
         MessageService messageService = messageServiceFactory.getMessageService(provider.toUpperCase());
         if(messageService!=null) {
             System.out.println("Sending message using "+ provider);
-            messageService.sendMessage(to, from, message);
-            System.out.println("Message sent successfully using " + provider);
-            return "Message sent successfully using " + provider;
+            String result = messageService.sendMessage(to, from, message);
+            System.out.println(result);
+            return result;
         }
         return provider + " is not supported as of now!";
     }
